@@ -1,0 +1,33 @@
+﻿@model Orders_API.ViewModels.OrdersViewModel
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+
+<div>
+    <table class="table-bordered">
+        <tr>
+            <th>Sales Person</th>
+            <th>Product</th>
+            <th>Product Price (per unit)</th>
+            <th>Quantity</th>
+            <th>Order Date</th>
+            <th>mail</th>
+            <th>phone</th>
+        </tr>
+        @foreach (var x in Model.Orders)
+        {
+            <tr>
+                <td>@x.Sales.SalesPerson</td>
+                <td>@x.Sales.Product</td>
+                <td>@x.Sales.Product_Price</td>
+                <td>@x.Sales.Quantity</td>
+                <td>@x.OrderDate</td>
+                <td>@x.mail</td>
+                <td>@x.phone</td>
+            </tr>
+        }
+    </table>
+</div>
+
